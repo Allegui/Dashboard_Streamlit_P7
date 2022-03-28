@@ -128,10 +128,10 @@ with st.container():
         if 0 <= score_client < 25:
             score_text = 'Crédit score : EXCELLENT'
             st.success(score_text)
-        elif 25 <= score_client < 50:
+        elif 25 <= score_client < 45:
             score_text = 'Crédit score : BON'
             st.success(score_text)
-        elif 50 <= score_client < 75:
+        elif 45 <= score_client < 55:
             score_text = 'Crédit score : MOYEN'
             st.warning(score_text)
         else :
