@@ -43,7 +43,7 @@ test_X_2 = test_X_2.drop(["Unnamed: 0"], axis=1)
 app_train = pd.read_csv('app_train.csv')
 app_train = app_train.drop(["Unnamed: 0"], axis=1)
 
-image = Image.open('Pret_A_Depenser.png')
+# image = Image.open('Pret_A_Depenser.png')
 
 pickle_in = open("xgb_cl_undersampling.pkl","rb")
 xgb_cl_undersampling = pickle.load(pickle_in)
@@ -77,9 +77,9 @@ st.markdown(
 # --------------------------------------------------------------------
 # LOGO
 # --------------------------------------------------------------------
-# Chargement du logo de l'entreprise
-st.sidebar.image(image, width=240, caption=" Dashboard - Aide à la décision",
-                  use_column_width='always')
+# # Chargement du logo de l'entreprise
+# st.sidebar.image(image, width=240, caption=" Dashboard - Aide à la décision",
+#                   use_column_width='always')
 
 
 # Score du client en pourcentage arrondi et nombre entier
