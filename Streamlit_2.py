@@ -192,7 +192,7 @@ with st.container():
                                                                                 'EXT_SOURCE_2','EXT_SOURCE_3']]))
     
     with col1:
-        explainer = shap.TreeExplainer(xgb_cl_undersampling, model_output='probability', feature_perturbation = "interventional", data=test_X)
+        explainer = shap.TreeExplainer(xgb_cl_undersampling, model_output='probability', feature_perturbation = 'interventional', data=test_X)
         shap_values = explainer(test_X)
         fig = plt.figure()
         shap.plots.waterfall(shap_values[np.asscalar(SK_ID_CURR_test_X.loc[SK_ID_CURR_test_X['SK_ID_CURR']==client_number].index)])
