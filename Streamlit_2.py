@@ -25,7 +25,7 @@ st.set_page_config(page_title="Prêt à dépenser - Dashboard", page_icon="", la
 st.title("Prêt à Dépenser")
 
 st.write("""
-# Dashboard Interactif pour évaluez la solvabilité d'un client
+# Dashboard Interactif pour évaluer la solvabilité d'un client
 """)
 
 test_X = pd.read_csv('test_X.csv')
