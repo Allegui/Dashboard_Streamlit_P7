@@ -16,6 +16,7 @@ import seaborn as sns
 import plotly.graph_objects as go
 import requests
 import json
+from fonctions import *
 
 
 
@@ -30,30 +31,23 @@ st.write("""
 
 test_X = pd.read_csv('test_X.csv')
 test_X = test_X.drop(["Unnamed: 0"], axis=1)
-# test_X = test_X.loc[range(1000),]
 
 SK_ID_CURR_test_X = pd.read_csv('SK_ID_CURR_test_X.csv')
 SK_ID_CURR_test_X = SK_ID_CURR_test_X.drop(["Unnamed: 0"], axis=1)
-# SK_ID_CURR_test_X = SK_ID_CURR_test_X.loc[range(1000),]
 
 test_X_2 = pd.read_csv('test_X_2.csv')
 test_X_2 = test_X_2.drop(["Unnamed: 0"], axis=1)
-# test_X_2 = test_X_2.loc[range(1000),]
 
 app_train = pd.read_csv('app_train.csv')
 app_train = app_train.drop(["Unnamed: 0"], axis=1)
 
 image = Image.open('Pret_A_Depenser.png')
 
-pickle_in = open("xgb_cl_undersampling.pkl","rb")
-xgb_cl_undersampling = pickle.load(pickle_in)
 
 client_number = st.selectbox("Séléctionnez un client", (i for i in SK_ID_CURR_test_X['SK_ID_CURR']))
-
-data_df = test_X.loc[test_X.index==np.asscalar(SK_ID_CURR_test_X.loc[SK_ID_CURR_test_X['SK_ID_CURR']==client_number].index),:]
     
 # Create prediction
-prediction = float(xgb_cl_undersampling.predict_proba(data_df)[0][1])
+prediction = API_prediction("https://www.google.com",client_number)
 
 
 
