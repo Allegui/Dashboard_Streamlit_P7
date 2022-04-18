@@ -47,7 +47,7 @@ image = Image.open('Pret_A_Depenser.png')
 client_number = st.selectbox("Séléctionnez un client", (i for i in SK_ID_CURR_test_X['SK_ID_CURR']))
     
 # Create prediction
-prediction = requests("https://apiguillaumeallemonierep7.herokuapp.com/",client_number)
+prediction = requests("https://apiguillaumeallemonierep7.herokuapp.com/get_predict",client_number)
 
 
 
