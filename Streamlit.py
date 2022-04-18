@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 from PIL import Image
 import seaborn as sns
 import plotly.graph_objects as go
-import requests
+# import requests
 import json
 from fonctions import *
 
@@ -47,7 +47,7 @@ image = Image.open('Pret_A_Depenser.png')
 client_number = st.selectbox("Séléctionnez un client", (i for i in SK_ID_CURR_test_X['SK_ID_CURR']))
     
 # Create prediction
-prediction = API_prediction("https://apiguillaumeallemonierep7.herokuapp.com/",client_number)
+prediction = requests("https://apiguillaumeallemonierep7.herokuapp.com/",client_number)
 
 
 
