@@ -86,7 +86,7 @@ fig_jauge = go.Figure(go.Indicator(
     # Score du client en % df_dashboard['SCORE_CLIENT_%']
     value = score_client,  
     domain = {'x': [0, 1], 'y': [0, 1]},
-    title = {'text': 'Crédit score du client (en %)', 'font': {'size': 24}},
+    title = {'text': 'Probabilité de défaut du client (en %)', 'font': {'size': 24}},
     
     gauge = {'axis': {'range': [None, 100],
                       'tickwidth': 3,
